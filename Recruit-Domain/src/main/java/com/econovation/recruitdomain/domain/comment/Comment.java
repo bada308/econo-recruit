@@ -3,6 +3,7 @@ package com.econovation.recruitdomain.domain.comment;
 
 import com.econovation.recruitdomain.domain.BaseTimeEntity;
 import com.econovation.recruitdomain.domain.applicant.Applicant;
+import com.econovation.recruitdomain.domain.board.CardType;
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,32 +21,31 @@ public class Comment extends BaseTimeEntity {
     @Column(name = "comment_id")
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "applicant_id")
-    private Applicant applicant;
+    @Column(name = "card_type")
+    private CardType cardType;
 
-    @Column(name = "parent_id")
-    private Long parentId;
+    @Column(name = "card_id")
+    private Integer cardId;
+
+    @Column(name = "idp_id")
+    private Integer idpId;
 
     @Column(name = "content")
     private String content;
 
     @Column(name = "is_deleted")
     private Boolean isDeleted;
+    @Column(name = "parent_id")
+    private Long parentId;
 
     @Column(name = "like_count")
     private Integer likeCount;
 
-    @Column(name = "idp_id")
-    private Integer idpId;
 
     public void delete() {
         this.isDeleted = true;
     }
 
-    public Applicant getApplicant() {
-        return applicant;
-    }
 
     @PrePersist
     public void prePersist() {

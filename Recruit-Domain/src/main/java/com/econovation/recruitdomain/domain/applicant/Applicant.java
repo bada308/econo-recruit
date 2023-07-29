@@ -20,9 +20,6 @@ public class Applicant extends BaseTimeEntity {
     @Column(name = "id")
     private Integer id;
 
-    //    @OneToOne
-    //    @JoinColumn(name = "card_id")
-    //    private Card card;
     @Column(name = "hope_field")
     private String hopeField;
 
@@ -62,6 +59,7 @@ public class Applicant extends BaseTimeEntity {
     @Column(name = "portfolio")
     private String portfolio;
 
+    //지원 경로
     @Column(name = "support_path")
     private String supportPath;
 

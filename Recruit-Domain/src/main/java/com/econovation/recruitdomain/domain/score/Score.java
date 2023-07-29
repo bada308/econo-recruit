@@ -18,9 +18,8 @@ public class Score {
     @Column(name = "score_id")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "applicant_id")
-    private Applicant applicant;
+    @Column(name = "applicant_id")
+    private Integer applicantId;
 
     @Column(name = "criteria")
     private String criteria;

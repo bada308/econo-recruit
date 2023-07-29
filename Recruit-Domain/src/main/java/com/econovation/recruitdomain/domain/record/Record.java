@@ -17,9 +17,8 @@ public class Record {
     @Column(name = "record_id")
     private Integer id;
 
-    @OneToOne
-    @JoinColumn(name = "applicant_id")
-    private Applicant applicant;
+    @Column(name = "applicant_id")
+    private Integer applicantId;
 
     @Column(name = "url")
     private String url;

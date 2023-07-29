@@ -19,9 +19,8 @@ public class Resume {
     @Column(name = "resume_id")
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "applicant_id")
-    private Applicant applicant;
+    @Column(name = "applicant_id")
+    private Integer applicantId;
 
     @Column(name = "question_id")
     private Integer questionId;

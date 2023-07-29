@@ -21,30 +21,12 @@ public class Card extends BaseTimeEntity {
     @Column(name = "card_id")
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "board_id")
-    private Board board;
+    @Column(name = "title")
+    private String title;
 
-    @ManyToOne(cascade = CascadeType.REMOVE)
-    @JoinColumn(name = "applicant_id")
-    private Applicant applicant;
+    @Column(name = "label_count")
+    private Integer labelCount;
 
-    @Column(name = "work_card_info")
-    private String workCardInfo;
-
-    public Card(Applicant applicant, Board board) {
-        this.applicant = applicant;
-        this.workCardInfo = null;
-        this.board = board;
-    }
-    //    @Override
-    //    public boolean equals(Object o) {
-    //        if (this == o) {
-    //            return true;
-    //        }
-    //        if (!(o instanceof Card)) {
-    //            return false;
-    //        }
-    //        return Objects.equals(id, this.id);
-    //    }
+    @Column(name = "comment_count")
+    private Integer commentCount;
 }

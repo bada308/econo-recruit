@@ -6,7 +6,7 @@ import com.econovation.recruitdomain.domain.board.Board;
 import com.econovation.recruitdomain.domain.comment.Comment;
 import com.econovation.recruitdomain.domain.dto.*;
 import com.econovation.recruitdomain.domain.interviewer.Interviewer;
-import com.econovation.recruitdomain.domain.interviewer.Role;
+import com.econovation.recruitdomain.domain.interviewer.InterviewerRole;
 import com.econovation.recruitdomain.domain.record.Record;
 import com.econovation.recruitdomain.domain.score.Score;
 import com.econovation.recruitdomain.domain.timetable.TimeTable;
@@ -98,7 +98,7 @@ public class EntityMapper {
         for (InterviewerCreateDto interviewerCreateDto : interviewerCreateDtos) {
             interviewers.add(
                     Interviewer.builder()
-                            .role(Role.getByName(interviewerCreateDto.getRole()))
+                            .role(InterviewerRole.getByName(interviewerCreateDto.getRole()))
                             .id(interviewerCreateDto.getIdpId())
                             .build());
         }

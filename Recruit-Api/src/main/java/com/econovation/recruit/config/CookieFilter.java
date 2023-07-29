@@ -2,7 +2,7 @@ package com.econovation.recruit.config;
 
 
 import com.econovation.recruit.application.port.in.InterviewerUseCase;
-import com.econovation.recruitdomain.domain.interviewer.Role;
+import com.econovation.recruitdomain.domain.interviewer.InterviewerRole;
 import io.jsonwebtoken.Jwts;
 import java.io.IOException;
 import java.util.Base64;
@@ -62,10 +62,10 @@ public class CookieFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
         if (request.getRequestURI().startsWith("/api/v1/interviewers")) {
             String role = interviewerUseCase.getById(Math.toIntExact(idpId)).getRole().name();
-            if (role.equals(Role.ROLE_PRESIDENT.name())
+            if (role.equals(InterviewerRole.ROLE_PRESIDENT.name())
                     ||
-                    //                    role.equals(Role.ROLE_TF.name()) ||
-                    role.equals(Role.ROLE_OPERATION.name())) {
+                    //                    role.equals(InterviewerRole.ROLE_TF.name()) ||
+                    role.equals(InterviewerRole.ROLE_OPERATION.name())) {
                 log.info("ADMIN ACCESS");
                 filterChain.doFilter(request, response);
             }

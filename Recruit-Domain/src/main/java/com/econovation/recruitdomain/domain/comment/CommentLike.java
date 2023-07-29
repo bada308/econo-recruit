@@ -16,9 +16,8 @@ public class CommentLike {
     @Column(name = "comment_like_id")
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "comment_id")
-    private Comment comment;
+    @Column(name = " comment_id")
+    private Integer commentId;
 
     @Column(name = "idp_id")
     private Integer idpId;

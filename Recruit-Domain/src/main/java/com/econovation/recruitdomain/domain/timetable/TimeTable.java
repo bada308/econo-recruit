@@ -2,6 +2,7 @@ package com.econovation.recruitdomain.domain.timetable;
 
 
 import com.econovation.recruitdomain.domain.applicant.Applicant;
+import java.time.LocalDateTime;
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,16 +20,12 @@ public class TimeTable {
     @Column(name = "time_table_id")
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "applicant_id")
-    private Applicant applicant;
+    @Column(name = "applicant_id")
+    private Integer applicantId;
 
     @Column(name = "start_time")
-    private String startTime;
+    private LocalDateTime startTime;
 
     @Column(name = "end_time")
-    private String endTime;
-
-    @Column(name = "day")
-    private String day;
+    private LocalDateTime endTime;
 }

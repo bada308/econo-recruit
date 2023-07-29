@@ -19,9 +19,15 @@ public class Interviewer {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
-    private Role role;
+    private InterviewerRole role;
 
-    public void changeRole(Role role) {
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "year")
+    private Integer year;
+
+    public void changeRole(InterviewerRole role) {
         this.role = role;
     }
 }

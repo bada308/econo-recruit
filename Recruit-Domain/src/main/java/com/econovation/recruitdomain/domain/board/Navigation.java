@@ -11,7 +11,7 @@ import lombok.*;
 @Getter
 public class Navigation {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "nav_title")
